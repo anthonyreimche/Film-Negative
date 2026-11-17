@@ -1,0 +1,28 @@
+{
+  "id": "film-negative",
+  "name": "Film Negative",
+  "version": "1.0.0",
+  "description": "Turns scanned colour and black and white negatives into positives: sample the film base, then set the film's density range and the print's colour, contrast and exposure, by hand, with pickers on the image, or with one Auto. RAW camera scans are read as the sensor recorded them.",
+  "author": "Anthony Reimche",
+  "main": "dist/index.js",
+  "license": "GPL-3.0-or-later",
+  "categories": [
+    "color",
+    "detail"
+  ],
+  "keywords": [
+    "film",
+    "negative",
+    "invert",
+    "inversion",
+    "scan",
+    "film base",
+    "orange mask",
+    "density",
+    "paper grade",
+    "black and white",
+    "darkroom print"
+  ],
+  "repository": "anthonyreimche/Film-Negative",
+  "minAppVersion": "3.2.6"
+}
