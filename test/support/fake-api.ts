@@ -270,6 +270,10 @@ export function fakeApi(options: RigOptions = {}): Rig {
       setPickDrag: (t) => pick.set(t),
       useCanvasToolHeld: () => tool.use() !== null,
       setCanvasTool: (t) => tool.set(t),
+      framePoint: (el: Element, clientX: number, clientY: number) => {
+        const r = el.getBoundingClientRect();
+        return { x: clientX - r.left, y: clientY - r.top };
+      },
       setViewValues: (values) => void (viewValues = values),
       captureFrame: async () => fake<ImageBitmap>({ width: canvas.width, height: canvas.height, close: () => undefined }, "bitmap"),
       captureFloatFrame: async (params, opts) => {
@@ -300,6 +304,7 @@ export function fakeApi(options: RigOptions = {}): Rig {
       components: fake<SafelightAPI["components"]>({ Slider, AutoButton }, "api.components"),
       ui,
       develop: developApi,
+      cursors: fake<SafelightAPI["cursors"]>({ resolve: (token: string) => (token === "pick" ? "cell" : "default") }, "api.cursors"),
       stores: fake<SafelightAPI["stores"]>(
         { useDevelopStore: storeOf<DevelopState, FakeDevelop>(develop, "develop state"), useCatalogStore: storeOf<CatalogState, Pick<CatalogState, "photos">>(catalog, "catalog state") },
         "api.stores",

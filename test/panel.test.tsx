@@ -35,9 +35,8 @@ const colourBag = (over = {}) => negativePatch({ ...COLOUR_FILM, stock: "colour"
 function dragAcross() {
   const overlay = render(React.createElement(AreaOverlay, { rect: { x: 0, y: 0, w: 400, h: 300 } }));
   const surface = overlay.getByTestId("area-surface");
+  expect(surface.style.cursor).toBe("cell");
   vi.spyOn(surface, "getBoundingClientRect").mockReturnValue(DOMRect.fromRect({ x: 0, y: 0, width: 400, height: 300 }));
-  Object.defineProperty(surface, "offsetWidth", { value: 400 });
-  Object.defineProperty(surface, "offsetHeight", { value: 300 });
   fireEvent.pointerDown(surface, { clientX: 100, clientY: 60, pointerId: 1, button: 0 });
   fireEvent.pointerMove(surface, { clientX: 300, clientY: 240, pointerId: 1 });
   fireEvent.pointerUp(surface, { clientX: 300, clientY: 240, pointerId: 1 });

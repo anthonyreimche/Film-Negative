@@ -1,7 +1,7 @@
 {
   "id": "film-negative",
   "name": "Film Negative",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Turns scanned colour and black and white negatives into positives: sample the film base, then set the film's density range and the print's colour, contrast and exposure, by hand, with pickers on the image, or with one Auto. RAW camera scans are read as the sensor recorded them.",
   "author": "Anthony Reimche",
   "main": "dist/index.js",
@@ -24,5 +24,5 @@
     "darkroom print"
   ],
   "repository": "anthonyreimche/Film-Negative",
-  "minAppVersion": "3.2.6"
+  "minAppVersion": "3.2.8"
 }

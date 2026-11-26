@@ -20,6 +20,7 @@ export function activate(host: SafelightAPI): void {
     title: "Film Negative",
     component: FilmNegativePanel,
     defaultDock: { module: "develop", direction: "right", width: 280 },
+    modules: ["develop"],
     onReset: () => {
       const dev = host.stores.useDevelopStore.getState();
       dev.setDynParams(negativePatch(DEFAULT_NEGATIVE));

@@ -1,7 +1,7 @@
 {
   "name": "safelight-film-negative",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Film Negative extension for Safelight: turns scanned colour and black and white negatives into positives, from the film base to the print.",
   "type": "module",
   "scripts": {

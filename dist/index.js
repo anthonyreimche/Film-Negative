@@ -588,10 +588,10 @@ function je() {
 var Me = 4;
 function Ne({ rect: e }) {
 	let { tokens: t } = I.ui, [n, r] = F.useState(null), i = (t) => {
-		let n = t.currentTarget, r = n.getBoundingClientRect(), i = (t.clientX - r.left) / r.width * n.offsetWidth, a = (t.clientY - r.top) / r.height * n.offsetHeight;
+		let n = I.develop.framePoint(t.currentTarget, t.clientX, t.clientY);
 		return {
-			x: (i - e.x) / e.w,
-			y: (a - e.y) / e.h
+			x: (n.x - e.x) / e.w,
+			y: (n.y - e.y) / e.h
 		};
 	}, a = (e) => {
 		if (!n) return;
@@ -615,7 +615,7 @@ function Ne({ rect: e }) {
 		style: {
 			position: "absolute",
 			inset: 0,
-			cursor: "crosshair",
+			cursor: I.cursors.resolve("pick"),
 			pointerEvents: "auto"
 		},
 		onPointerDown: (e) => {
@@ -696,6 +696,7 @@ function Ie(e) {
 			direction: "right",
 			width: 280
 		},
+		modules: ["develop"],
 		onReset: () => {
 			let t = e.stores.useDevelopStore.getState();
 			t.setDynParams(O(r)), t.commitEdit("Film Negative reset");
